@@ -18,7 +18,7 @@ requires:
   MooseX::Role::Parameterized: 0
 resources:
   repository: git://git.codesimply.com/Role-Subsystem.git
-version: 0.101250
+version: 0.101261
 x_Dist_Zilla:
   plugins:
     -
