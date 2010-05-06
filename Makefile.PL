@@ -25,7 +25,7 @@ my %WriteMakefileArgs = (
                        'PREREQ_PM' => {
                                         'MooseX::Role::Parameterized' => '0'
                                       },
-                       'VERSION' => '0.101261',
+                       'VERSION' => '0.101262',
                        'test' => {
                                    'TESTS' => 't/*.t'
                                  }
