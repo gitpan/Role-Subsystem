@@ -1,6 +1,6 @@
 package Role::Subsystem;
 BEGIN {
-  $Role::Subsystem::VERSION = '0.101262';
+  $Role::Subsystem::VERSION = '0.101340';
 }
 use MooseX::Role::Parameterized;
 # ABSTRACT: a parameterized role for object subsystems, helpers, and delegates
@@ -12,6 +12,13 @@ parameter ident => (isa => 'Str', required => 1);
 parameter what => (
   isa      => 'Str',
   required => 1,
+);
+
+
+parameter what_id => (
+  isa      => 'Str',
+  lazy     => 1,
+  default  => sub { $_[0]->what . '_id' },
 );
 
 
@@ -39,7 +46,7 @@ role {
 
   my $what      = $p->what;
   my $ident     = $p->ident;
-  my $what_id   = "$what\_id";
+  my $what_id   = $p->what_id;
   my $getter    = $p->getter;
   my $id_method = $p->id_method;
   my $weak_ref  = $p->weak_ref;
@@ -161,7 +168,7 @@ Role::Subsystem - a parameterized role for object subsystems, helpers, and deleg
 
 =head1 VERSION
 
-version 0.101262
+version 0.101340
 
 =head1 DESCRIPTION
 
@@ -309,6 +316,13 @@ This is the name of the attribute that will hold the parent object, like the
 C<account> in the synopsis above.
 
 This attribute is required.
+
+=head2 what_id
+
+This is the name of the attribute that will hold the parent object's
+identifier, like the C<account_id> in the synopsis above.
+
+If not given, it will be the value of C<what> with "_id" stuck on the end.
 
 =head2 type
 
