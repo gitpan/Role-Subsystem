@@ -1,6 +1,6 @@
 package Role::Subsystem;
-BEGIN {
-  $Role::Subsystem::VERSION = '0.101340';
+{
+  $Role::Subsystem::VERSION = '0.101341';
 }
 use MooseX::Role::Parameterized;
 # ABSTRACT: a parameterized role for object subsystems, helpers, and delegates
@@ -158,8 +158,8 @@ role {
   }
 };
 
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -168,7 +168,7 @@ Role::Subsystem - a parameterized role for object subsystems, helpers, and deleg
 
 =head1 VERSION
 
-version 0.101340
+version 0.101341
 
 =head1 DESCRIPTION
 
@@ -398,7 +398,7 @@ C<what_id>.
 
 =head1 AUTHOR
 
-  Ricardo Signes <rjbs@cpan.org>
+Ricardo Signes <rjbs@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
@@ -408,4 +408,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
